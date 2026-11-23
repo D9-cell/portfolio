@@ -43,6 +43,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .mark{font-family:var(--serif);font-size:26px;line-height:1}
 .mark span{color:var(--accent)}
 nav ul{display:flex;gap:30px;list-style:none}
+.nav-right{display:flex;align-items:center;gap:34px}
+.resume-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid var(--ink);border-radius:999px;font-size:13.5px;font-weight:500;transition:background .35s var(--ease),color .35s var(--ease)}
+.resume-pill:hover{background:var(--ink);color:var(--paper)}
+.resume-pill svg{transition:transform .35s var(--ease)}
+.resume-pill:hover svg{transform:translateY(2px)}
 nav ul a{font-size:14px;color:var(--ink-2);position:relative;padding:4px 0;transition:color .3s}
 nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--ink);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
 nav ul a:hover,nav ul a.active{color:var(--ink)}
@@ -82,9 +87,6 @@ nav ul a:hover::after,nav ul a.active::after{transform:scaleX(1);transform-origi
 .portrait::after{content:"";position:absolute;inset:0;border-radius:22px;box-shadow:inset 0 0 0 1px rgba(20,20,20,.06);pointer-events:none}
 @keyframes unveil{to{clip-path:inset(0 0 0 0 round 22px)}}
 @keyframes settle{to{transform:scale(1)}}
-.scroll-hint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px}
-.scroll-hint i{display:block;width:1px;height:46px;background:linear-gradient(var(--ink-3),transparent);animation:drip 2.2s var(--ease) infinite;transform-origin:top}
-@keyframes drip{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
 section{padding:130px 0;position:relative}
 .sec-head{display:grid;grid-template-columns:200px 1fr;gap:40px;margin-bottom:70px;align-items:end}
@@ -236,8 +238,7 @@ section{padding:130px 0;position:relative}
   .portrait::after{border-radius:50%}
   .portrait figcaption{display:none}
   .portrait .fallback{font-size:44px}
-  .scroll-hint{display:none}
-  .contact{padding-top:100px}
+    .contact{padding-top:100px}
   .foot{margin-top:80px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -252,6 +253,7 @@ section{padding:130px 0;position:relative}
 <nav id="nav">
   <div class="wrap">
     <a href="#top" class="mark" aria-label="Home">D<span>.</span>D</a>
+    <div class="nav-right">
     <ul>
       <li><a href="#work">Work</a></li>
       <li><a href="#notes">Field notes</a></li>
@@ -259,6 +261,8 @@ section{padding:130px 0;position:relative}
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <a class="resume-pill" href="https://drive.google.com/uc?export=download&amp;id=1tmAoBPQTYY1Ab3AsyqFBpL5D9DoYmY0f" download>Resume <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4M3 14h10" stroke="currentColor" stroke-width="1.5"/></svg></a>
+    </div>
   </div>
 </nav>
 
@@ -276,6 +280,7 @@ section{padding:130px 0;position:relative}
       <a href="#work" class="btn primary">See selected work
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
       </a>
+      <a href="https://drive.google.com/uc?export=download&amp;id=1tmAoBPQTYY1Ab3AsyqFBpL5D9DoYmY0f" class="btn ghost" download>Download resume <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4M3 14h10" stroke="currentColor" stroke-width="1.5"/></svg></a>
       <a href="#contact" class="btn ghost">Get in touch</a>
     </div>
     </div>
@@ -287,7 +292,6 @@ section{padding:130px 0;position:relative}
       </figure>
     </div>
   </div>
-  <div class="scroll-hint mono fade-in" style="animation-delay:1.6s">Scroll<i></i></div>
 </header>
 
 <div class="stats">
@@ -468,6 +472,8 @@ section{padding:130px 0;position:relative}
       <a href="https://leetcode.com/u/deeponsubhro/" target="_blank" rel="noopener">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 2.3a1.2 1.2 0 0 1 .1 1.7L9.4 8.4l-.1.1c1-.4 2.2-.4 3.3-.1l3.4 1a1.2 1.2 0 1 1-.7 2.3l-3.4-1a3.4 3.4 0 0 0-3.4.9l-2.5 2.6a3.3 3.3 0 0 0 0 4.6l3.2 3.3a3.2 3.2 0 0 0 4.5 0l2.6-2.7a1.2 1.2 0 1 1 1.7 1.7l-2.6 2.7a5.6 5.6 0 0 1-7.9 0l-3.2-3.3a5.7 5.7 0 0 1 0-8l6.5-6.8 3.6-3.7a1.2 1.2 0 0 1 1.7 0Zm-2.3 11.4h9a1.2 1.2 0 1 1 0 2.4h-9a1.2 1.2 0 1 1 0-2.4Z"/></svg>
         LeetCode</a>
+      <a href="https://drive.google.com/uc?export=download&amp;id=1tmAoBPQTYY1Ab3AsyqFBpL5D9DoYmY0f" download><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M8 2v9M4 7l4 4 4-4M3 14h10" stroke="currentColor" stroke-width="1.5"/></svg>
+        Resume</a>
     </div>
     <div class="foot"><span>© <span id="yr"></span> Deepon Das</span><span>Kolkata, India · Open to relocation</span></div>
   </div>
